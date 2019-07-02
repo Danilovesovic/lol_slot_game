@@ -1,0 +1,189 @@
+*{
+    box-sizing: border-box
+}
+body,html {
+    height: 100%;
+}
+body {
+    margin: 0;
+}
+.container {
+    position: relative;
+    width: 1000px;
+    box-shadow: 0 0 8px black;
+    height: 600px;
+    margin: 50px auto;
+    overflow: hidden;
+    
+}
+.newline {
+    position: absolute;
+    top: -4200px;
+}
+.intro-1 {
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+.intro-2 {
+    position: absolute;
+    top: 0px;
+    left: 200px;
+}
+.intro-3 {
+    position: absolute;
+    top: 0px;
+    left: 400px;
+}
+.intro-4 {
+    position: absolute;
+    top: 0px;
+    left: 600px;
+}
+.intro-5{
+    position: absolute;
+    top: 0px;
+    left: 800px;
+}
+.newline-1 {
+   
+    left: 0;
+}
+.newline-2 {
+   
+    left: 200px;
+}
+.newline-3 {
+    
+    left: 400px;
+}
+.newline-4 {
+    
+    left: 600px;
+}
+.newline-5{
+    
+    left: 800px;
+}
+
+
+.box {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+.icon {
+    width: 140px;
+    height: 140px;
+}
+.btn-holder {
+    text-align: left;
+}
+.lines {
+    position: absolute;
+    width: 30px;
+    height: 100vh;
+    background-color: rgb(5, 7, 0);
+    top: 0;
+    left: 0;
+}
+#one {
+    width: 20px;
+    height: 20px;
+    background-color: tomato;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    position: absolute;
+    top: 100px;
+    left: 3px;
+    cursor: pointer;
+}
+#two {
+    width: 20px;
+    height: 20px;
+    background-color: tomato;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    position: absolute;
+    top: 150px;
+    left: 3px;
+    cursor: pointer;
+}
+#three {
+    width: 20px;
+    height: 20px;
+    background-color: tomato;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    position: absolute;
+    top: 350px;
+    left: 3px;
+    cursor: pointer;
+}
+#four {
+    width: 20px;
+    height: 20px;
+    background-color: tomato;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    position: absolute;
+    top: 540px;
+    left: 3px;
+    cursor: pointer;
+}
+
+.show-line-1 {
+    width: 900px;
+    height: 4px;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    background-color: rgba(255, 99, 71, 0.626);
+    display: none;
+}
+.show-line-2 {
+    width: 550px;
+    height: 4px;
+    position: absolute;
+    top: 300px;
+    left: 50px;
+    transform: rotate(45deg);
+    background-color: rgba(255, 99, 71, 0.626);
+    display: none;
+}
+.show-line-2-1 {
+    width: 550px;
+    height: 4px;
+    position: absolute;
+    top: 300px;
+    left: 440px;
+    transform: rotate(-45deg);
+    background-color: rgba(255, 99, 71, 0.626);
+    display: none;
+}
+.show-line-3 {
+    width: 900px;
+    height: 4px;
+    position: absolute;
+    top:300px;
+    left: 50px;
+    background-color: rgba(255, 99, 71, 0.626);
+    display: none;
+}
+.show-line-4 {
+    width: 900px;
+    height: 4px;
+    position: absolute;
+    top:500px;
+    left: 50px;
+    background-color: rgba(255, 99, 71, 0.626);
+    display: none;
+}
