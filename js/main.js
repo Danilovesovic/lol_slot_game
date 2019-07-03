@@ -1,4 +1,7 @@
+let canSpin = true;
+let caitlinAudio = document.querySelector('#caitlin');
 let winlineAudio = document.querySelector('#winline')
+let teemoAudio = document.querySelector('#teemo')
 let winlineAudio2 = document.querySelector('#winline2')
 let firstLinePresenter = document.querySelector('.show-line-1');
 let secondLinePresenter1 = document.querySelector('.show-line-2');
@@ -14,6 +17,15 @@ let container = $('.container');
 let counter = 0;
 let winingLines = [];
 startBtn.on('click',spin)
+
+window.addEventListener('keyup',function(e){
+  
+  if(canSpin && e.keyCode == 32){
+    canSpin = false;
+    spin()
+  }
+  
+})
 
 one.addEventListener('mouseover',function(){
   firstLinePresenter.style.display = "block";
@@ -48,7 +60,7 @@ four.addEventListener('mouseout',function(){
 
 
 function spin(){
-  $(this).attr('disabled','disabled')
+  startBtn.attr('disabled','disabled')
   counter++;
   winingLines.length = 0;
   let time = 700;
@@ -112,13 +124,17 @@ lines.forEach(function(line){
   }
 })
 animateWinningLines()
+
 }
 
 function checkTwo(line){
-  if($('.newline-1 > .box-'+line[0]).html() == $('.newline-2 > .box-'+line[1]).html()){
-    winingLines.push([$('.newline-1 > .box-'+line[0]),$('.newline-2 > .box-'+line[1])]);
-    return true;
+  if($('.newline-1 > .box-'+line[0]).find('img').attr('src') == "images/key.png"){
+    if($('.newline-1 > .box-'+line[0]).html() == $('.newline-2 > .box-'+line[1]).html()){
+      winingLines.push([$('.newline-1 > .box-'+line[0]),$('.newline-2 > .box-'+line[1])]);
+      return true;
+    }
   }
+  
 }
 function checkThree(line){
   if($('.newline-1 > .box-'+line[0]).html() == $('.newline-2 > .box-'+line[1]).html() && $('.newline-1 > .box-'+line[0]).html() == $('.newline-3 > .box-'+line[2]).html()){
@@ -142,18 +158,42 @@ function checkFive(line){
   }
 }
 
+function checkFreeGames(){
+  let allVisibles = $('.box-1,.box-2,.box-3');
+  let chests = [];
+  $.each(allVisibles,function(index,box){
+    if($(box).find('img').attr('src') == "images/chest.png"){
+      chests.push($(box))
+    }
+  })
+  console.log(chests.length)
+  if(chests.length > 2){
+    console.log("free games");
+    
+  }
+}
+
 function animateWinningLines(){
   let timer = 0;
   let tester = 0;
   let winLinesLength = winingLines.length;
   if(winLinesLength == 0){
+    canSpin = true;
+    checkFreeGames()
+
     startBtn.removeAttr('disabled')
   }
   winingLines.forEach(function(line){
    
     tester++;
     setTimeout(function(){
-      winlineAudio2.play();
+      // winlineAudio2.play();
+      console.log()
+      if(line[0].find('img').attr('src') == 'images/cait.ico'){
+        caitlinAudio.play()
+      }else if(line[0].find('img').attr('src') == 'images/teemo.png'){
+teemoAudio.play()
+      }
       line.forEach(function(box){
         box.find('img').animate({
           width : "160px",
@@ -164,6 +204,8 @@ function animateWinningLines(){
             height: "140px"
           },200,function(){
             if(tester == winLinesLength){
+              canSpin = true
+              checkFreeGames()
               startBtn.removeAttr('disabled')
             }
           })
@@ -171,7 +213,7 @@ function animateWinningLines(){
       })
       
     },timer)
-    timer += 800;
+    timer += 1200;
   })
 }
 

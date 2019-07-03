@@ -46,6 +46,18 @@ let icons = [
     'teemo.png',
     'teemo.png',
     'teemo.png',
+    'teemo.png',
+    'teemo.png',
+    'teemo.png',
+    'teemo.png',
+    'teemo.png',
+    'teemo.png',
+    'teemo.png',
+    'teemo.png',
+    'teemo.png',
+    'teemo.png',
+    'teemo.png',
+    'teemo.png',
     'blitz.ico',
     'blitz.ico',
     'cait.ico',
@@ -59,7 +71,7 @@ let icons = [
     'jinx.png',
     'teemo.png',
     'blitz.ico',
-    'cait.ico',
+ 
     'fizz.png',
     'teemo.png'
 ];
