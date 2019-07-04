@@ -2,6 +2,12 @@ let canSpin = true;
 let caitlinAudio = document.querySelector('#caitlin');
 let winlineAudio = document.querySelector('#winline')
 let teemoAudio = document.querySelector('#teemo')
+let jinxAudio = document.querySelector('#jinx')
+let brandAudio = document.querySelector('#brand')
+let chestAudio = document.querySelector('#chest')
+let fizzAudio = document.querySelector('#fizz')
+let keyAudio = document.querySelector('#key')
+let blitzAudio = document.querySelector('#blitz')
 let winlineAudio2 = document.querySelector('#winline2')
 let firstLinePresenter = document.querySelector('.show-line-1');
 let secondLinePresenter1 = document.querySelector('.show-line-2');
@@ -74,7 +80,6 @@ function spin(){
 
     $.each($('.line'),function(i,e){
       time += 100;
-      winlineAudio.play()
       $(e).animate({
         top : "+=4200"
     },time,'swing',function(){
@@ -169,7 +174,7 @@ function checkFreeGames(){
   console.log(chests.length)
   if(chests.length > 2){
     console.log("free games");
-    
+    chestAudio.play()
   }
 }
 
@@ -184,15 +189,22 @@ function animateWinningLines(){
     startBtn.removeAttr('disabled')
   }
   winingLines.forEach(function(line){
-   
     tester++;
     setTimeout(function(){
-      // winlineAudio2.play();
-      console.log()
       if(line[0].find('img').attr('src') == 'images/cait.ico'){
         caitlinAudio.play()
       }else if(line[0].find('img').attr('src') == 'images/teemo.png'){
-teemoAudio.play()
+        teemoAudio.play()
+      }else if(line[0].find('img').attr('src') == 'images/fizz.png'){
+        fizzAudio.play()
+      }else if(line[0].find('img').attr('src') == 'images/blitz.ico'){
+        blitz.play()
+      }else if(line[0].find('img').attr('src') == 'images/jinx.png'){
+        jinxAudio.play();
+      }else if(line[0].find('img').attr('src') == 'images/brand.ico'){
+          brandAudio.play()
+      }else if(line[0].find('img').attr('src') == 'images/key.png'){
+        keyAudio.play()
       }
       line.forEach(function(box){
         box.find('img').animate({
@@ -209,11 +221,11 @@ teemoAudio.play()
               startBtn.removeAttr('disabled')
             }
           })
-        })
+        })  
       })
       
     },timer)
-    timer += 1200;
+    timer += 2200;
   })
 }
 
